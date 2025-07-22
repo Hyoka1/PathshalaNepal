@@ -1,0 +1,178 @@
+/* Base Settings Styles */
+:root {
+  --primary-color: #005792;
+  --secondary-color: #0079b3;
+  --background-light: #f1f9ff;
+  --background-white: #ffffff;
+  --text-dark: #333;
+  --text-light: #444;
+}
+
+.settings-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #f1f9ff, #ffffff);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 60px 20px;
+  font-family: "Segoe UI", sans-serif;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Dark Mode Styles */
+.settings-wrapper.dark-mode {
+  background: linear-gradient(to bottom right, #1a1a2e, #16213e);
+  color: #e9e9e9;
+}
+
+.settings-wrapper.dark-mode .settings-card {
+  background: #0f3460;
+  box-shadow: 0 12px 25px rgba(255, 255, 255, 0.1);
+}
+
+.settings-wrapper.dark-mode .settings-title {
+  color: #e9e9e9;
+}
+
+.settings-wrapper.dark-mode .settings-section h2 {
+  color: #e9e9e9;
+}
+
+.settings-wrapper.dark-mode .settings-input {
+  background-color: #1a1a2e;
+  color: #e9e9e9;
+  border-color: #16213e;
+}
+
+.settings-card {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.settings-title {
+  text-align: center;
+  font-size: 30px;
+  color: #005792;
+  margin-bottom: 30px;
+  letter-spacing: -1px;
+}
+
+.settings-section {
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.settings-section h2 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.section-icon {
+  margin-right: 10px;
+  color: var(--primary-color);
+}
+
+.settings-input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.settings-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(0, 87, 146, 0.2);
+}
+
+.save-btn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: block;
+  width: 100%;
+}
+
+.save-btn:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.save-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Toggle Styles */
+.toggle-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-container:hover {
+  background-color: rgba(0, 87, 146, 0.05);
+}
+
+.toggle-label {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #444;
+}
+
+.toggle-label svg {
+  margin-right: 10px;
+  color: var(--primary-color);
+}
+
+.toggle-switch {
+  width: 50px;
+  height: 24px;
+  background-color: #ddd;
+  border-radius: 20px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-switch.active {
+  background-color: #4caf50;
+}
+
+.toggle-slider {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: white;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s ease;
+}
+
+.toggle-switch.active .toggle-slider {
+  transform: translateX(26px);
+}

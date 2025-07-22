@@ -1,0 +1,638 @@
+/* Base Dashboard Layout */
+.staffDashboard {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 2rem;
+  color: #1a237e;
+  margin: 0;
+}
+
+.userInfo {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Tab Navigation */
+.tabNav {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.tab,
+.activeTab {
+  padding: 10px 28px;
+  border-radius: 6px 6px 0 0;
+  border: none;
+  background: #f5f6fa;
+  color: #333;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.activeTab {
+  background: #1976d2;
+  color: #fff;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
+}
+
+/* Section Containers */
+.membersSection,
+.ordersSection,
+.orderDetailsSection,
+.historySection {
+  margin-top: 12px;
+  background: #fafbfc;
+  border-radius: 8px;
+  padding: 24px 18px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+}
+
+/* Table Styles */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 18px;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+.table th,
+.table td {
+  padding: 12px 10px;
+  border-bottom: 1px solid #e0e0e0;
+  text-align: left;
+}
+.table th {
+  background: #f0f4f8;
+  color: #1976d2;
+  font-weight: 600;
+}
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Status Indicators */
+.statusPending {
+  background: #fff3e0;
+  color: #e65100;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.statusCompleted {
+  background: #e8f5e9;
+  color: #2e7d32;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.statusCancelled {
+  background: #ffebee;
+  color: #c62828;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.statusContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.viewModeTag {
+  background: #e3f2fd;
+  color: #1565c0;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.viewModeMessage {
+  color: #757575;
+  font-style: italic;
+  padding: 12px;
+  background: #f5f5f5;
+  border-radius: 4px;
+  text-align: center;
+  width: 100%;
+}
+
+/* Error State */
+.error {
+  color: #d32f2f;
+  background: #ffebee;
+  border: 1px solid #ffcdd2;
+  padding: 10px 16px;
+  border-radius: 6px;
+  margin: 18px 0;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+/* Empty and Loading States */
+.emptyState {
+  text-align: center;
+  color: #666;
+  padding: 20px;
+  background: #f5f6fa;
+  border-radius: 4px;
+  font-style: italic;
+}
+
+.loadingState {
+  text-align: center;
+  padding: 40px 20px;
+  color: #1976d2;
+  font-weight: 500;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 24px;
+  gap: 16px;
+}
+
+.paginationButton {
+  padding: 8px 16px;
+  background: #f0f4f8;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  color: #333;
+}
+
+.paginationButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pageInfo {
+  color: #555;
+}
+
+/* Dashboard Cards */
+.statsContainer {
+  margin-bottom: 2rem;
+}
+
+.dashboardCard {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  border: 1px solid #e0e0e0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.dashboardCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cardIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.cardContent {
+  flex: 1;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  color: #1a237e;
+  margin: 0 0 0.5rem 0;
+}
+
+.cardDescription {
+  color: #666;
+  margin: 0;
+}
+
+/* Quick Actions */
+.quickActionsContainer {
+  margin-bottom: 2rem;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  color: #1a237e;
+  margin-bottom: 1rem;
+}
+
+.quickActions {
+  display: flex;
+  gap: 1rem;
+}
+
+.actionButton {
+  padding: 0.75rem 1.5rem;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.actionButton:hover {
+  background-color: #1565c0;
+}
+
+/* Recent Activity */
+.recentActivityContainer {
+  margin-top: 32px;
+}
+
+.recentActivity {
+  background: #f5f6fa;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.activityItem {
+  padding: 12px 0;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+}
+
+.activityItem:last-child {
+  border-bottom: none;
+}
+
+.activityTime {
+  font-size: 0.85rem;
+  color: #777;
+  width: 120px;
+  flex-shrink: 0;
+}
+
+.activityDesc {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* Search Box */
+.searchContainer {
+  margin-bottom: 24px;
+}
+
+.searchBox {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.searchInput {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.searchButton {
+  padding: 0 24px;
+  background: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.searchInstructions {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+/* Back Button */
+.backButton {
+  padding: 8px 16px;
+  background: #f0f4f8;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Filter Buttons */
+.filterContainer {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.filterButton {
+  padding: 8px 16px;
+  background: #f0f4f8;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  color: #333;
+}
+
+.activeFilter {
+  background: #1976d2;
+  color: white;
+  border-color: #1976d2;
+}
+
+/* Order Card */
+.orderCard {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.orderHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.orderHeader h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.orderInfo {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.infoGroup h3 {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.infoItem {
+  margin-bottom: 8px;
+  display: flex;
+}
+
+.label {
+  width: 120px;
+  font-weight: 500;
+  color: #777;
+}
+
+.value {
+  font-weight: 500;
+  color: #333;
+}
+
+.booksSection {
+  margin-bottom: 24px;
+}
+
+.booksSection h3 {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.booksList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bookItem {
+  padding: 12px 16px;
+  background: #f5f6fa;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bookTitle {
+  font-weight: 500;
+  color: #333;
+  flex: 1;
+}
+
+.bookQuantity {
+  color: #666;
+  font-size: 0.9rem;
+  margin-left: 16px;
+}
+
+.financialDetails {
+  margin-bottom: 24px;
+  background: #f9f9f9;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.financialDetails h3 {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.financialItem {
+  margin-bottom: 8px;
+  display: flex;
+}
+
+.finalAmount {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #e0e0e0;
+  font-weight: 700;
+}
+
+.finalAmount .label,
+.finalAmount .value {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.actionArea {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.processButton {
+  padding: 12px 24px;
+  background: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s;
+}
+
+.processButton:hover {
+  background: #1565c0;
+}
+
+.processButton:disabled {
+  background: #90caf9;
+  cursor: not-allowed;
+}
+
+.completedMessage {
+  padding: 12px 16px;
+  background: #e8f5e9;
+  color: #2e7d32;
+  border-radius: 6px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.cancelledMessage {
+  padding: 12px 16px;
+  background: #ffebee;
+  color: #c62828;
+  border-radius: 6px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.fulfillButton {
+  padding: 12px 24px;
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s;
+}
+
+.fulfillButton:hover {
+  background: #388e3c;
+}
+
+.fulfillButton:disabled {
+  background: #a5d6a7;
+  cursor: not-allowed;
+}
+
+.viewButton {
+  padding: 6px 12px;
+  background: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .staffDashboard {
+    padding: 20px 16px;
+  }
+
+  .orderInfo {
+    grid-template-columns: 1fr;
+  }
+
+  .quickActions {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .statsContainer {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.instructionsContainer {
+  background: #f5f5f5;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.instructionItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.instructionItem:last-child {
+  margin-bottom: 0;
+}
+
+.instructionNumber {
+  background: #1976d2;
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  flex-shrink: 0;
+}
+
+.instructionText {
+  color: #424242;
+  font-size: 1rem;
+  line-height: 1.5;
+}

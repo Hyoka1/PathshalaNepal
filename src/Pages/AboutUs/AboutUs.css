@@ -1,0 +1,230 @@
+/* Enhanced AboutUs CSS */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2980b9;
+  --text-dark: #2c3e50;
+  --text-light: #34495e;
+  --background-gradient: linear-gradient(
+    135deg,
+    #f0f9ff 0%,
+    #cbebff 50%,
+    #f0f9ff 100%
+  );
+}
+
+.about-wrapper {
+  min-height: 100vh;
+  padding: 60px 20px;
+  background: var(--background-gradient);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  perspective: 1000px;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-wrapper::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle at center,
+    rgba(52, 152, 219, 0.05) 0%,
+    transparent 70%
+  );
+  transform: rotate(-45deg);
+  z-index: 1;
+}
+
+.about-card {
+  background: white;
+  padding: 50px;
+  border-radius: 25px;
+  max-width: 1000px;
+  width: 100%;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1), 0 15px 35px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.about-title {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: var(--text-dark);
+  position: relative;
+  font-weight: 700;
+}
+
+.about-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--primary-color) 0%,
+    var(--secondary-color) 100%
+  );
+  border-radius: 2px;
+}
+
+.about-section {
+  margin-bottom: 35px;
+  padding: 20px;
+  background: #f7fafc;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.about-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.about-section:hover::before {
+  transform: scaleX(1);
+}
+
+.about-section h2 {
+  color: var(--text-dark);
+  margin-bottom: 15px;
+  font-size: 24px;
+  font-weight: 600;
+  position: relative;
+}
+
+.about-section h2::before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: var(--primary-color);
+}
+
+.about-section p,
+.about-section ul {
+  color: var(--text-light);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.about-section ul {
+  padding-left: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.about-section li {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background: #f0f4f8;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.about-section li:hover {
+  transform: translateX(10px);
+  background: #e6f2ff;
+}
+
+.about-section li::before {
+  content: attr(data-icon);
+  margin-right: 10px;
+  font-size: 1.2em;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) rotateX(-10deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .about-card {
+    padding: 30px;
+  }
+
+  .about-title {
+    font-size: 28px;
+  }
+
+  .about-section h2 {
+    font-size: 22px;
+  }
+
+  .about-section ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Subtle background animation */
+.about-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    rgba(52, 152, 219, 0.03) 0%,
+    rgba(52, 152, 219, 0.03) 100%
+  );
+  animation: subtleBackgroundMove 10s ease infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes subtleBackgroundMove {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+}
